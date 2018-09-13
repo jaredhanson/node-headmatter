@@ -1,6 +1,6 @@
 {
   "name": "headmatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Front matter parsing and serialization.",
   "author": {
     "name": "Jared Hanson",
