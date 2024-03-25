@@ -72,6 +72,20 @@ describe('headmatter', function() {
       });
     }); // should parse YAML
     
+    it('should parse JSON with delimiter', function() {
+      var str = [
+        ';;;',
+        '{ "foo": "bar" }',
+        ';;;',
+        'This is content'
+      ].join('\n')
+      
+      expect(headmatter.parse(str, JSON.parse, ';;;')).to.deep.equal({
+        front: { foo: 'bar' },
+        content: 'This is content'
+      });
+    }); // should parse JSON with delimiter
+    
   }); // parse
   
   describe('check', function() {
