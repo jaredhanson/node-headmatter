@@ -74,4 +74,49 @@ describe('headmatter', function() {
     
   }); // parse
   
+  describe('check', function() {
+    
+    it('should return false when front matter not present', function() {
+      var str = [
+        'This is content'
+      ].join('\n')
+      
+      expect(headmatter.check(str)).to.be.false;
+    }); // should return false when front matter not present
+    
+    it('should return true when default delimiter is present', function() {
+      var str = [
+        '---',
+        'foo: bar',
+        '---',
+        'This is content'
+      ].join('\n')
+      
+      expect(headmatter.check(str)).to.be.true;
+    }); // should return true when default delimiter is present
+    
+    it('should return true when delimiter is present', function() {
+      var str = [
+        '+++',
+        'foo: bar',
+        '+++',
+        'This is content'
+      ].join('\n')
+      
+      expect(headmatter.check(str, '+++')).to.be.true;
+    }); // should return true when default delimiter is present
+    
+    it('should return false when delimiter is not present', function() {
+      var str = [
+        '---',
+        'foo: bar',
+        '---',
+        'This is content'
+      ].join('\n')
+      
+      expect(headmatter.check(str, '+++')).to.be.false;
+    }); // should return false when delimiter is not present
+    
+  }); // check
+  
 });
