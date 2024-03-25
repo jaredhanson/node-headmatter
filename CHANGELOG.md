@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.2] - 2018-09-13
 
+### Changed
+
+- `head` property of object returned from `parse()` defaults to an empty object,
+rather than `undefined`, when no front matter is present.
+
 ## [0.0.1] - 2018-09-13
 
 - Initial release.
