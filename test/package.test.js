@@ -14,7 +14,7 @@ describe('headmatter', function() {
       ].join('\n')
       
       expect(headmatter.parse(str)).to.deep.equal({
-        head: {},
+        front: {},
         content: 'This is content'
       });
     }); // should parse YAML
@@ -28,7 +28,7 @@ describe('headmatter', function() {
       ].join('\n')
       
       expect(headmatter.parse(str)).to.deep.equal({
-        head: { foo: 'bar' },
+        front: { foo: 'bar' },
         content: 'This is content'
       });
     }); // should parse YAML
@@ -42,7 +42,7 @@ describe('headmatter', function() {
       ].join('\r\n')
       
       expect(headmatter.parse(str)).to.deep.equal({
-        head: { foo: 'bar' },
+        front: { foo: 'bar' },
         content: 'This is content'
       });
     }); // should parse YAML
@@ -67,7 +67,7 @@ describe('headmatter', function() {
       ].join('\n')
       
       expect(headmatter.parse(str, JSON.parse)).to.deep.equal({
-        head: { foo: 'bar' },
+        front: { foo: 'bar' },
         content: 'This is content'
       });
     }); // should parse YAML

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `check()` function for checking if text begins with front matter delimiter.
 
 ### Changed
+- Renamed `head` property of object returned from `parse()` to `front`.
 
 ## [0.0.2] - 2018-09-13
 
